@@ -99,7 +99,11 @@ multiply(4, 3, function(answer){
 //Code Here 
 
 function contains(arr, name, cb){
-  
+  if (arr.includes(name)) {
+    cb(true)
+  } else {
+    cb(false)
+  }
 }
 
 // Do not edit the code below.
@@ -123,12 +127,18 @@ contains(names, 'Colt', function(result){
 
 //Code Here
 function uniq(arr, cb){
-  let newNames = new Set(arr)
-  arr = newNames
-  return cb(names)
+  let newArr = []
+    arr.forEach(element => {
+      if (!newArr.includes(element)){
+        newArr.push(element)
+      }
+    })
+    return cb(newArr)
+  }
+  
 
 
-}
+
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
