@@ -156,6 +156,12 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
+function each(arr, cb){
+  for(i=0;i<arr.length;i++){
+      cb(arr[i], arr.length)
+    
+  }
+}
 
 // Do not edit the code below.
 each(names, function(item, indice){
@@ -173,6 +179,18 @@ each(names, function(item, indice){
 */
 
 // Code here
+let newArr
+function getUserById(arr, id, cb){
+
+for (i = 0; i < arr.length; i++){
+  if(arr[i].includes(id)){
+     newArr = arr[i].email + arr[i].address + arr[i].name
+    return cb(newArr)
+
+  }
+}
+
+}
 
 // Do not edit the code below.
 var users = [
